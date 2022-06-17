@@ -421,7 +421,7 @@ animation: animate-wave 500ms infinite ease;
     opacity: 1;
  }
 
- @media (max-width: 768px){
+ @media (max-width: 767px){
     nav{
         height: 68px;
     }
