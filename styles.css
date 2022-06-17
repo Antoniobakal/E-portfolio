@@ -17,6 +17,10 @@ h1,h2,h3,h4,h5,h6, span{
     line-height: 1.25;
 }
 
+.Lemon{
+    color: #e7db36;
+}
+
 h1{
     font-size: 36px;
 }
@@ -86,6 +90,14 @@ section:nth-child(even){
     justify-content: space-between;
     align-items: center;
  }
+
+ .logo__starter{
+    display: flex;
+    height: 70px;
+    width: 70px;
+    filter: invert(78%) sepia(83%) saturate(354%) hue-rotate(359deg) brightness(106%) contrast(101%);
+
+ }
  .nav__link--list{
     display: flex;
  }
@@ -113,6 +125,7 @@ section:nth-child(even){
     color: #6030b1;
     margin: 0 12px;
     font-weight: bold;
+    padding-right: 450px; 
 }
 
  /*ABOUT me */
@@ -381,8 +394,8 @@ animation: animate-wave 500ms infinite ease;
 
 
  .footer__logo--img{
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
  }
 
  .footer__socal--link {
@@ -417,13 +430,29 @@ animation: animate-wave 500ms infinite ease;
 
  } 
 .footer__anchor:hover .footer__logo--poper {
-    transform: translate(60px);
+    transform: translate(100%);
     opacity: 1;
  }
 
- @media (max-width: 768px){
+ @media (max-width:800px){
+ 
+    body{
+        padding-right: 180px;
+    }
+
+    .nav--link:not(:last-child){
+    display: none;    
+    }
     nav{
         height: 68px;
+    }
+
+    .personal__logo{
+        font-size: 16px;
+
+    }
+    .logo__starter{
+        display: none;
     }
 
     h1{
@@ -448,18 +477,24 @@ animation: animate-wave 500ms infinite ease;
 
 /*small phones*/
 
-@media (max-width:480px){
-    .nav--link:not(:last-child){
+@media (max-width:480px) {
+
+    .project__description--para{
         display: none;
     }
 
-    .project__description--para{
+    .logo__starter{
         display: none;
     }
 
     .project__description--links{
         display: flex;
     }
+
+    .project__description--para{
+        display: none;
+    }
+
 
     .project__discription{
         padding: none;
