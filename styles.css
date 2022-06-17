@@ -6,9 +6,9 @@
     margin: 0;
     box-sizing: border-box;
 }
-html {
-    scroll-behavior:smooth;
-}
+ html{
+    scroll-behavior: smooth;
+ }
 
 
 h1,h2,h3,h4,h5,h6, span{
@@ -20,17 +20,17 @@ h1,h2,h3,h4,h5,h6, span{
 h1{
     font-size: 36px;
 }
-.link__hover-effect:after{
+.link__hover--effect:after{
     content: "";
     position: absolute;
     height: 3px;
     border-color: black;
-    width: 0;
+    width: 100%;
     bottom:-3px ;
     left: 0;
 
 }
-.link__hover-effect:hover:after{
+.link__hover--effect:hover:after{
     width: 100%;
 }
 
@@ -56,15 +56,13 @@ nav{
 .text--purple{
     color: #6030b1;
 }
-body{
-    margin-bottom: 1000px;
-}
 
 
 .row{
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 12px;
 }
 
 section:nth-child(even){
@@ -145,7 +143,22 @@ section:nth-child(even){
     overflow: hidden;
     box-shadow:0 8px 16px rgba(0, 0, 0, 0.15);
     margin-bottom: 28px;
+    animation: animate-profile-picture 800ms 200ms backwards;
  }
+
+@keyframes animate-profile-picture {
+    0% {
+        transform: scale(0);
+
+    }
+    80%{
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
  .about--me__picture{
     width: 100%;
 
@@ -154,17 +167,34 @@ section:nth-child(even){
  }
  .about--me__info--title{
     margin: 20px;
+    animation:fade-up 650ms 400ms backwards ;
  }
 
  .about__me--para{
     font-size: 28px;
     margin-bottom: 28px;
+    animation:fade-up 650ms 600ms backwards ;
  }
 
  .about-me__link{
     font-size: 28px;
     color: #242424;
     padding: 0 16px;
+ }
+ .about-me__links{
+    animation:fade-up 650ms 800ms backwards ;
+
+ }
+
+ @keyframes fade-up{
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100%{
+        opacity:1 ;
+        transform: translateY(0);
+    }
  }
 
  .about-me_img--container{
@@ -174,7 +204,35 @@ section:nth-child(even){
  }
  .about-me__img{
     width: 100%;
+    animation: fade-in 1200ms 800ms backwards;
  }
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.wave{
+    display: inline-block;
+animation: animate-wave 500ms infinite ease;
+}
+
+@keyframes animate-wave {
+    0% {
+        transform:rotate(0);
+    }
+    50%{
+        transform: rotate(30deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
  /* Tech - Stack */
 
  .language__img{
@@ -362,3 +420,62 @@ section:nth-child(even){
     transform: translate(60px);
     opacity: 1;
  }
+
+ @media (max-width: 768px){
+    nav{
+        height: 68px;
+    }
+
+    h1{
+        font-size: 28px;
+    }
+    .about__me--para{
+        font-size: 18px;
+    }
+
+    .language{
+        width: calc(100% / 2);
+    }
+
+    .project__description--para{
+        font-size: 14px;
+    }
+    .project__discription {
+        left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/*small phones*/
+
+@media (max-width:480px){
+    .nav--link:not(:last-child){
+        display: none;
+    }
+
+    .project__description--para{
+        display: none;
+    }
+
+    .project__description--links{
+        display: flex;
+    }
+
+    .project__discription{
+        padding: none;
+        left:0;
+        width: 100%;
+    }
+
+.project__discription--title{
+    font-size: 32px;
+    line-height: 1;
+    text-align: center;
+}
+
+
+    .project__description--sub-title{
+        align-items: center;
+        margin: 12px 0;
+    }
+}
