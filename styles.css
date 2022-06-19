@@ -49,6 +49,7 @@ li{
     list-style-type: none;
 }
 nav{
+    max-width: 100%;
     margin: 0 auto;
 }
 .flex{
@@ -182,6 +183,7 @@ section:nth-child(even){
     margin: 20px;
     animation:fade-up 650ms 400ms backwards ;
  }
+ 
 
  .about__me--para{
     font-size: 28px;
@@ -310,8 +312,11 @@ animation: animate-wave 500ms infinite ease;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
+    max-height: 400px;
+    height: 100%;
  }
  .project__wraper:before{
+    margin: 0 auto;
     content: "";
     position: absolute;
     top: 0;
@@ -434,31 +439,32 @@ animation: animate-wave 500ms infinite ease;
     opacity: 1;
  }
 
- @media (max-width:800px){
+ @media (max-width:900px){
  
-    body{
-        padding-right: 180px;
+
+
+    .logo__starter{
+        display: none;
     }
 
     .nav--link:not(:last-child){
-    display: none;    
+    display: none;
+    margin-left: 112px;
     }
     nav{
         height: 68px;
     }
 
-    .personal__logo{
+    .persona__llogo{
+        margin-right: 16px;
         font-size: 16px;
 
-    }
-    .logo__starter{
-        display: none;
     }
 
     h1{
         font-size: 28px;
     }
-    .about__me--para{
+    .aboutme--para{
         font-size: 18px;
     }
 
@@ -466,51 +472,30 @@ animation: animate-wave 500ms infinite ease;
         width: calc(100% / 2);
     }
 
-    .project__description--para{
-        font-size: 14px;
-    }
-    .project__discription {
-        left: 30px;
-        padding-right: 30px;
-    }
-}
-
-/*small phones*/
-
-@media (max-width:480px) {
-
-    .project__description--para{
-        display: none;
-    }
-
-    .logo__starter{
-        display: none;
-    }
-
-    .project__description--links{
-        display: flex;
-    }
-
-    .project__description--para{
-        display: none;
-    }
-
-
     .project__discription{
-        padding: none;
-        left:0;
-        width: 100%;
+        left: 0;
     }
 
-.project__discription--title{
-    font-size: 32px;
-    line-height: 1;
-    text-align: center;
-}
+    
+
+   .project__wraper{
+    max-height: 450px;
+    height:100% ;
+    margin: 0 auto;
+    width: 80%;
+   }
 
 
-    .project__description--sub-title{
-        align-items: center;
-        margin: 12px 0;
-    }
+
 }
+
+@media (max-width:700px){
+ .project__description--para{
+    display: none;
+ }
+}
+
+@media (max-width:650){
+   
+}
+
